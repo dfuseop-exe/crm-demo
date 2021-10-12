@@ -6,7 +6,7 @@ import Signin from './Components/Signin';
 function App() {
   return (
     <>
-      <Forgotpass />
+      <Signin />
     </>
   );
 }

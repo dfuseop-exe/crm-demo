@@ -22,7 +22,7 @@ export default function forgotpass() {
           width: "500px",
           height: "auto",
           padding: "45px",
-          backgroundColor: "#E6E6FA",
+          
         }}
       >
         <div class="card-body ">

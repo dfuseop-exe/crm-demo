@@ -1,5 +1,6 @@
 import React from "react";
 import back from '../Components/background.jpg'
+import "./Signin.css"
 
 export default function Signin() {
   return (
@@ -22,7 +23,7 @@ export default function Signin() {
           width: "500px",
           height: "auto",
           padding: "40px",
-          backgroundColor: "#ffdead",
+          
         }}
       >
         <div class="card-body ">
