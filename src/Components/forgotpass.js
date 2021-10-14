@@ -1,9 +1,10 @@
 import React from "react";
 import back from '../Components/background.jpg'
+import "./forgotpass.css"
 
 export default function forgotpass() {
   return (
-    <div style = {{backgroundImage: `url(${back})`}}>
+    <div style = {{backgroundColor : "#f77f1bc7"}}>
     <div
       class="container"
       style={{
@@ -33,11 +34,8 @@ export default function forgotpass() {
             <input
               type="text"
               class="form-control"
-              placeholder="username"
+              placeholder="name@domain.com"
             />
-            <span class="input-group-text" id="basic-addon2">
-              @gmail.com
-            </span>
           </div>
 
           <button type="button" class="btn" style={{backgroundColor : "#D2691E" , color : "white" , fontWeight : "bold"}}>Request</button>

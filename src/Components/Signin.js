@@ -4,7 +4,10 @@ import "./Signin.css"
 
 export default function Signin() {
   return (
-    <div style = {{backgroundImage: `url(${back})`}}>
+    <div style = {{
+      // backgroundImage: `url(${back})`
+      backgroundColor : "#f77f1bc7"
+      }}>
          <div
       class="container"
       style={{
@@ -18,12 +21,11 @@ export default function Signin() {
       }}
     >
       <div
-        class="card shadow p-3 mb-5 rounded"
+        class="card shadow  p-3 mb-5 rounded"
         style={{
           width: "500px",
           height: "auto",
-          padding: "40px",
-          
+          padding: "40px", 
         }}
       >
         <div class="card-body ">
@@ -45,6 +47,7 @@ export default function Signin() {
               type="text"
               class="form-control"
               placeholder="Enter your password"
+
             />
           </div>
 
@@ -54,8 +57,7 @@ export default function Signin() {
             <input
               class="form-check-input"
               type="checkbox"
-              id="flexCheckChecked"
-              
+              id="flexCheckChecked" 
             />
             <label class="form-check-label" for="flexCheckChecked">
               Remember Me

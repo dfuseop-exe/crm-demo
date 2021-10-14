@@ -10,5 +10,5 @@ input[type=text] {
   }
   
   input[type=text]:focus {
-    border: 3px solid rgb(247, 130, 34);
+    border: 3px solid #555;
   }
