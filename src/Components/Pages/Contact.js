@@ -5,7 +5,7 @@ import useStyles from "../styles";
 import PropTypes from 'prop-types';
 import DataTable from "../DataTable";
 import ADDForm from "../ADDForm";
-import SwipeableTemporaryDrawer from "../LeftDrawer";
+import LeftDrawer from "../LeftDrawer";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -47,9 +47,87 @@ function Contact() {
 
   const [value, setValue] = useState(0);
 
+
+
+  //PROPS DATA----------------------
+  const [contact, setcontact] = useState({
+    Email : "",
+    FirstName: " ",
+    LastName: " "
+  });
+
+
+  const rows = [
+    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
+    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
+    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
+    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
+    { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
+    { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
+    { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
+    { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
+    { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
+    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
+    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
+    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
+    { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
+    { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
+    { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
+    { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
+    { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+    { id: 11, lastName: 'Snow', firstName: 'Jon', age: 35 },
+    { id: 12, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
+    { id: 13, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
+    { id: 14, lastName: 'Stark', firstName: 'Arya', age: 16 },
+    { id: 15, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
+    { id: 16, lastName: 'Melisandre', firstName: null, age: 150 },
+    { id: 17, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
+    { id: 18, lastName: 'Frances', firstName: 'Rossini', age: 36 },
+    { id: 19, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+    { id: 21, lastName: 'Snow', firstName: 'Jon', age: 35 },
+    { id: 22, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
+    { id: 23, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
+    { id: 24, lastName: 'Stark', firstName: 'Arya', age: 16 },
+    { id: 25, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
+    { id: 26, lastName: 'Melisandre', firstName: null, age: 150 },
+    { id: 27, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
+    { id: 28, lastName: 'Frances', firstName: 'Rossini', age: 36 },
+    { id: 29, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+    { id: 31, lastName: 'Snow', firstName: 'Jon', age: 35 },
+    { id: 32, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
+    { id: 33, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
+    { id: 34, lastName: 'Stark', firstName: 'Arya', age: 16 },
+    { id: 35, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
+    { id: 36, lastName: 'Melisandre', firstName: null, age: 150 },
+    { id: 37, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
+    { id: 38, lastName: 'Frances', firstName: 'Rossini', age: 36 },
+    { id: 39, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+  ];
+
+  
+  const [Rows , setRows] = useState({rows})
+ 
+
+  const handleInput = (event) => {
+    let name, value;
+    name = event.target.name;
+    value = event.target.value;
+    setcontact({ ... contact, [name]:value });
+    //setRows(rows.push(contact))
+  };
+
+  //--------------------
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+
+  
+  const addData = (event)=>{
+    console.log("clicked")
+  }
 
   return (
     <div style={{ marginTop :  "100px" }}>
@@ -66,7 +144,7 @@ function Contact() {
               <Button variant="outlined" size="medium" sx={{ ml:3 }}>Actions</Button>
               <Button variant="outlined" size="medium" sx={{ ml:3 }}>Import</Button>
               
-              <SwipeableTemporaryDrawer/>
+              <LeftDrawer addData={addData} handleInput={handleInput} contact={contact} setcontact={setcontact}/>
           </div>
         </Box>
 
@@ -81,7 +159,7 @@ function Contact() {
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          <DataTable />
+          <DataTable contact={contact} rows={rows}/>
         </TabPanel>
         <TabPanel value={value} index={1}>
           My Contacts
@@ -90,7 +168,6 @@ function Contact() {
           Item Three
         </TabPanel>
       </main>
-      
     </div>
   );
 }
