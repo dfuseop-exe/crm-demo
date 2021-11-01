@@ -1,11 +1,6 @@
 import {
   AppBar,
   Button,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Paper,
-  Select,
   TextField,
   Toolbar,
   Typography,
@@ -61,6 +56,17 @@ export default function ADDForm(props) {
           onChange={props.handleInput}
           name="LastName"
           label="LastName"
+          variant="standard"
+          fullWidth
+        />
+
+        <TextField
+          style={{ marginBottom: "20px" }}
+          id="standard-basic"
+          value={props.contact.Age}
+          onChange={props.handleInput}
+          name="Age"
+          label="Age"
           variant="standard"
           fullWidth
         />
