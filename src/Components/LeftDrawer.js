@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import ADDForm from './ADDForm';
 import { orange } from '@mui/material/colors';
 
-export default function SwipeableTemporaryDrawer() {
+export default function LeftDrawer(props) {
   const [state, setState] = React.useState({
     left: false,
   });
@@ -24,7 +24,7 @@ export default function SwipeableTemporaryDrawer() {
 
   const list = (anchor) => (
     <Box style={{ width : "600px" }}>
-      <ADDForm/>
+      <ADDForm addData={props.addData} handleInput={props.handleInput} contact={props.contact} setcontact={props.setcontact}/>
     </Box>
   );
 

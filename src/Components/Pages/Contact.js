@@ -5,7 +5,7 @@ import useStyles from "../styles";
 import PropTypes from 'prop-types';
 import DataTable from "../DataTable";
 import ADDForm from "../ADDForm";
-import SwipeableTemporaryDrawer from "../LeftDrawer";
+import LeftDrawer from "../LeftDrawer";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -47,9 +47,51 @@ function Contact() {
 
   const [value, setValue] = useState(0);
 
+
+
+  //PROPS DATA----------------------
+  const [contact, setcontact] = useState({
+    Email : "",
+    FirstName: "",
+    LastName: "",
+    Age : ""
+  });
+
+
+
+  const rowData = [
+    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
+    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
+    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
+    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
+  ];
+ 
+  const [rows, setRows] = useState(rowData)
+
+  const handleInput = (event) => {
+    let name, value;
+    name = event.target.name;
+    value = event.target.value;
+    setcontact({ ...contact, [name]:value });
+    //setRows(rows.push(contact))
+  };
+
+  //--------------------
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+
+  
+  const addData = (event)=>{
+    const { Email , FirstName , LastName , Age} = contact
+    const field = { id : (rows.length)+1 , lastName : LastName , firstName : FirstName , age : Age }
+    console.log(field)
+    let rowdata = rows.concat(field)
+    setRows(rowdata)
+    
+  }
 
   return (
     <div style={{ marginTop :  "100px" }}>
@@ -66,7 +108,7 @@ function Contact() {
               <Button variant="outlined" size="medium" sx={{ ml:3 }}>Actions</Button>
               <Button variant="outlined" size="medium" sx={{ ml:3 }}>Import</Button>
               
-              <SwipeableTemporaryDrawer/>
+              <LeftDrawer addData={addData} handleInput={handleInput} contact={contact} setcontact={setcontact}/>
           </div>
         </Box>
 
@@ -81,7 +123,7 @@ function Contact() {
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          <DataTable />
+          <DataTable contact={contact} rows={rows}/>
         </TabPanel>
         <TabPanel value={value} index={1}>
           My Contacts
@@ -90,7 +132,6 @@ function Contact() {
           Item Three
         </TabPanel>
       </main>
-      
     </div>
   );
 }
