@@ -1,3 +1,4 @@
+import './ADDForm.css';
 import {
   AppBar,
   Button,
@@ -6,17 +7,20 @@ import {
   Typography,
 } from "@mui/material";
 import { orange } from "@mui/material/colors";
-import React, { useState } from "react";
+import React from "react";
+
 
 export default function ADDForm(props) {
 
 
+  
+
   return (
-    <div style={{ margin: "15% auto", width: "70%" }}>
+    <div style={{ margin: "15% auto", width: "70%"  }}>
       <AppBar
         style={{
           position: "absolute",
-          backgroundColor: "orange",
+          backgroundColor: "#ffa500d1",
           display: "flex",
           alignItems: "center",
         }}
@@ -28,9 +32,10 @@ export default function ADDForm(props) {
         </Toolbar>
       </AppBar>
 
-      <div style={{ marginBottom: "20px" }}>
+      <div style={{ marginBottom: "20px"}}>
         <TextField
-          style={{ marginBottom: "20px", marginTop: "30px" }}
+          
+          style={{ marginBottom: "20px", marginTop: "30px"}}
           id="standard-basic"
           value={props.contact.Email}
           onChange={props.handleInput}
@@ -38,6 +43,7 @@ export default function ADDForm(props) {
           label="Email"
           variant="standard"
           fullWidth
+          
         />
         <TextField
           style={{ marginBottom: "20px" }}
@@ -48,6 +54,7 @@ export default function ADDForm(props) {
           label="FirstName"
           variant="standard"
           fullWidth
+          
         />
         <TextField
           style={{ marginBottom: "20px" }}
@@ -69,9 +76,10 @@ export default function ADDForm(props) {
           label="Age"
           variant="standard"
           fullWidth
+          
         />
 
-        <Button style={{ backgroundColor: orange[400], color: "white" }} onClick={props.addData}>
+        <Button  variant="contained" size="medium" color="inherit" style={{color : props.mode ==="white" ?"black":"black"}} onClick={props.addData}>
           Create Contact
         </Button>
       </div>

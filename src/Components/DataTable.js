@@ -1,5 +1,7 @@
 import React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
+import './DataTable.css';
+
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
@@ -30,15 +32,21 @@ const columns = [
 const DataTable = (props) => {
 
 
+
     return (
         <div>
             <div style={{ height: 400, width: '100%' }}>
             <DataGrid
+                
                 rows={props.rows}
                 columns={columns}
                 pageSize={5}
                 rowsPerPageOptions={[5]}
                 checkboxSelection
+              
+                style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white"}}
+                
+                MuiSvgIcon-root
             />
             </div>
             

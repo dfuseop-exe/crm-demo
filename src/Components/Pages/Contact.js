@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import DataTable from "../DataTable";
 import LeftDrawer from "../LeftDrawer";
 
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -40,7 +41,7 @@ function a11yProps(index) {
 }
 
 
-function Contact() {
+function Contact(props) {
 
   const classes = useStyles();
 
@@ -104,25 +105,26 @@ function Contact() {
             Contacts
           </Typography>
           <div>
-              <Button variant="outlined" size="medium" sx={{ ml:3 }}>Actions</Button>
-              <Button variant="outlined" size="medium" sx={{ ml:3 }}>Import</Button>
+              <Button variant="contained" size="medium" color="inherit" sx={{ ml:3 }}  style={{color : props.mode ==="white" ?"black":"black"}} >Actions</Button>
+              <Button variant="contained" size="medium" color="inherit" sx={{ ml:3 ,mr :1 }} style={{color : props.mode ==="white" ?"black":"black"}}>Import</Button>
               
-              <LeftDrawer addData={addData} handleInput={handleInput} contact={contact} setcontact={setcontact}/>
+              <LeftDrawer addData={addData} handleInput={handleInput} contact={contact} setcontact={setcontact}  mode={props.mode}/>
           </div>
         </Box>
 
         {
           //Tabs Section
         }
+
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-            <Tab label="ALL Contacts" {...a11yProps(0)} />
-            <Tab label="My Contacts" {...a11yProps(1)} />
-            <Tab label="Unassigned Contacts" {...a11yProps(2)} />
+          <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
+            <Tab label="ALL Contacts" {...a11yProps(0)} style={{color : props.mode ==="white" ?"black":"white"}}  />
+            <Tab label="My Contacts" {...a11yProps(1)} style={{color : props.mode ==="white" ?"black":"white"}}/>
+            <Tab label="Unassigned Contacts" {...a11yProps(2)} style={{color : props.mode ==="white" ?"black":"white"}} />
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          <DataTable contact={contact} rows={rows}/>
+          <DataTable contact={contact} rows={rows} mode={props.mode}/>
         </TabPanel>
         <TabPanel value={value} index={1}>
           My Contacts

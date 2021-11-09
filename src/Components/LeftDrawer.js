@@ -23,15 +23,15 @@ export default function LeftDrawer(props) {
   };
 
   const list = (anchor) => (
-    <Box style={{ width : "600px" }}>
-      <ADDForm addData={props.addData} handleInput={props.handleInput} contact={props.contact} setcontact={props.setcontact}/>
+    <Box style={{ width : "600px"  , height : "100%" , backgroundColor : props.mode ==="white" ?"white":"#212529"}}>
+      <ADDForm addData={props.addData} handleInput={props.handleInput} contact={props.contact} setcontact={props.setcontact}  mode={props.mode}/>
     </Box>
   );
 
   return (
     <div style={{display : "inline-block" , marginLeft:"12px"}}>
       
-      <Button variant="text" style={{backgroundColor : orange[400] ,  color : "white" }} onClick={toggleDrawer("left", true)}>Create New Contact</Button>
+      <Button variant="contained" size="medium" color="inherit" style={{color : props.mode ==="white" ?"black":"black"}} onClick={toggleDrawer("left", true)}>Create New Contact</Button>
           <SwipeableDrawer
             anchor="left"
             open={state["left"]}
