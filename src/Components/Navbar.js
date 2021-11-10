@@ -47,8 +47,8 @@ export default function Navbar(props) {
 
               <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#fb8c00'>Orange</MenuItem>
               <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#e53935'>Red</MenuItem>
-              <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#8e24aa'>Purple</MenuItem>
-              <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#3f51b5'>Indigo</MenuItem>
+              <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#ab47bc'>Purple</MenuItem>
+              <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#5c6bc0'>Indigo</MenuItem>
               <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#20B2AA'>LightSeaGreen</MenuItem>
             </Select>
         </FormControl>
