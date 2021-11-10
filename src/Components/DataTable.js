@@ -5,25 +5,49 @@ import './DataTable.css';
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'firstName', headerName: 'First name', width: 130 },
-    { field: 'lastName', headerName: 'Last name', width: 130 },
     {
-      field: 'age',
-      headerName: 'Age',
-      type: 'number', 
-      width: 90,
-    },
-    {
-      field: 'fullName',
-      headerName: 'Full name',
+      field: 'name',
+      headerName: 'NAME',
       description: 'This column has a value getter and is not sortable.',
       sortable: false,
-      width: 160,
+      width: 200,
       valueGetter: (params) =>
         `${params.getValue(params.id, 'firstName') || ''} ${
           params.getValue(params.id, 'lastName') || ''
         }`,
     },
+
+    {
+      
+      field: 'Email',
+      headerName: 'Email',
+      type: 'text', 
+      width: 200,
+    },
+   
+    {
+      field: 'phone',
+      headerName: 'PHONE NUMBER',
+      type: 'phone', 
+      width: 200,
+    },
+
+    {
+      
+      field: 'contactowner',
+      headerName: 'CONTACT OWNER',
+      type: 'text', 
+      width: 200,
+    },
+    
+    {
+      
+      field: 'leadstatus',
+      headerName: 'LEAD STATUS',
+     
+      width: 200,
+    },
+    
   ];
   
   
@@ -40,13 +64,12 @@ const DataTable = (props) => {
                 
                 rows={props.rows}
                 columns={columns}
-                pageSize={5}
-                rowsPerPageOptions={[5]}
+                pageSize={10}
                 checkboxSelection
               
-                style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white"}}
+                style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}}
                 
-                MuiSvgIcon-root
+               
             />
             </div>
             

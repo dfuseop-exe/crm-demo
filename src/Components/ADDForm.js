@@ -6,7 +6,6 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { orange } from "@mui/material/colors";
 import React from "react";
 
 
@@ -20,13 +19,13 @@ export default function ADDForm(props) {
       <AppBar
         style={{
           position: "absolute",
-          backgroundColor: "#ffa500d1",
+          backgroundColor: `${props.theme}`,
           display: "flex",
           alignItems: "center",
         }}
       >
         <Toolbar>
-          <Typography variant="h5" textAlign="center" mt={2} mb={2}>
+          <Typography variant="h5" textAlign="center" mt={2} mb={2} style={{fontFamily : 'Comfortaa' , color : props.mode ==="white" ?"black":"white"}}>
             Create New Contact
           </Typography>
         </Toolbar>
@@ -70,16 +69,16 @@ export default function ADDForm(props) {
         <TextField
           style={{ marginBottom: "20px" }}
           id="standard-basic"
-          value={props.contact.Age}
+          value={props.contact.phone}
           onChange={props.handleInput}
-          name="Age"
-          label="Age"
+          name="phone"
+          label="phone"
           variant="standard"
           fullWidth
           
         />
 
-        <Button  variant="contained" size="medium" color="inherit" style={{color : props.mode ==="white" ?"black":"black"}} onClick={props.addData}>
+        <Button  variant="contained" size="medium" color="inherit" style={{color : props.mode ==="white" ?"black":"black" ,  fontFamily : 'Comfortaa'}} onClick={props.addData}>
           Create Contact
         </Button>
       </div>

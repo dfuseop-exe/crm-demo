@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <div>
             <Box textAlign="center" marginTop="100px">
-                <Typography variant="h1">Home Page</Typography>
+                <Typography variant="h1" style={{ fontFamily : 'Comfortaa'}}>Home Page</Typography>
             </Box>
         </div>
     )

@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Button from '@mui/material/Button';
 import ADDForm from './ADDForm';
-import { orange } from '@mui/material/colors';
 
 export default function LeftDrawer(props) {
   const [state, setState] = React.useState({
@@ -24,14 +23,14 @@ export default function LeftDrawer(props) {
 
   const list = (anchor) => (
     <Box style={{ width : "600px"  , height : "100%" , backgroundColor : props.mode ==="white" ?"white":"#212529"}}>
-      <ADDForm addData={props.addData} handleInput={props.handleInput} contact={props.contact} setcontact={props.setcontact}  mode={props.mode}/>
+      <ADDForm addData={props.addData} handleInput={props.handleInput} contact={props.contact} setcontact={props.setcontact}  mode={props.mode} theme={props.theme}/>
     </Box>
   );
 
   return (
     <div style={{display : "inline-block" , marginLeft:"12px"}}>
       
-      <Button variant="contained" size="medium" color="inherit" style={{color : props.mode ==="white" ?"black":"black"}} onClick={toggleDrawer("left", true)}>Create New Contact</Button>
+      <Button variant="contained" size="medium" color="inherit" style={{color : props.mode ==="white" ?"black":"black" , fontFamily : 'Comfortaa'}} onClick={toggleDrawer("left", true)}>Create New Contact</Button>
           <SwipeableDrawer
             anchor="left"
             open={state["left"]}

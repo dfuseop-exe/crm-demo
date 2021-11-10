@@ -54,18 +54,25 @@ function Contact(props) {
     Email : "",
     FirstName: "",
     LastName: "",
-    Age : ""
+    phone : "",
+    contactowner : "Sushant Shinde",
+    leadstatus : 'open'
+    
   });
 
 
 
   const rowData = [
-    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-  ];
- 
+    { id: 1, lastName: 'Snow', firstName: 'Jon', Email : 'abc@gmail.com' , phone: 111111111 ,contactowner: "Sushant Shinde"  , leadstatus : 'Open'},
+    { id: 2, lastName: 'Lannister', firstName: 'Cersei', Email : 'abc@gmail.com' , phone:2222222222 , contactowner: "Sushant Shinde" , leadstatus : 'Contacted' },
+    { id: 3, lastName: 'Lannister', firstName:  'Jaime', Email : 'abc@gmail.com' , phone: 4444444444 , contactowner: "Sushant Shinde" , leadstatus : 'Contacted' },
+    { id: 4, lastName: 'Stark', firstName: 'Arya', Email : 'abc@gmail.com' , phone: 7777777777  ,contactowner: "Sushant Shinde" , leadstatus : 'Open' },
+    { id: 5, lastName: 'Snow', firstName: 'Jon', Email : 'abc@gmail.com' , phone: 111111111 ,contactowner: "Sushant Shinde"  , leadstatus : 'Contacted'},
+    { id: 6 , lastName: 'Lannister', firstName: 'Cersei', Email : 'abc@gmail.com' , phone:2222222222 , contactowner: "Sushant Shinde" , leadstatus : 'Contacted' },
+    { id: 7, lastName: 'Lannister', firstName: 'Jaime', Email : 'abc@gmail.com' , phone: 4444444444 , contactowner: "Sushant Shinde"  , leadstatus : 'Open'},
+    { id: 8, lastName: 'Stark', firstName: 'Arya', Email : 'abc@gmail.com' , phone: 7777777777  ,contactowner: "Sushant Shinde" , leadstatus : 'Contacted' },
+
+  ]
   const [rows, setRows] = useState(rowData)
 
   const handleInput = (event) => {
@@ -85,8 +92,8 @@ function Contact(props) {
 
   
   const addData = (event)=>{
-    const { Email , FirstName , LastName , Age} = contact
-    const field = { id : (rows.length)+1 , lastName : LastName , firstName : FirstName , age : Age }
+    const { Email , FirstName , LastName , phone , contactowner , leadstatus } = contact
+    const field = { id : (rows.length)+1 , lastName : LastName , firstName : FirstName , phone : phone , Email : Email , contactowner : contactowner , leadstatus : leadstatus}
     console.log(field)
     let rowdata = rows.concat(field)
     setRows(rowdata)
@@ -101,14 +108,14 @@ function Contact(props) {
           //Heading Section
         }
         <Box sx={{ display: 'flex', justifyContent: 'space-between'}}>
-          <Typography variant="h5">
+          <Typography variant="h5" style={{fontFamily : 'Comfortaa'}}>
             Contacts
           </Typography>
           <div>
-              <Button variant="contained" size="medium" color="inherit" sx={{ ml:3 }}  style={{color : props.mode ==="white" ?"black":"black"}} >Actions</Button>
-              <Button variant="contained" size="medium" color="inherit" sx={{ ml:3 ,mr :1 }} style={{color : props.mode ==="white" ?"black":"black"}}>Import</Button>
+              <Button variant="contained" size="medium" color="inherit" sx={{ ml:3 }}  style={{color : props.mode ==="white" ?"black":"black" , fontFamily : 'Comfortaa'}} >Actions</Button>
+              <Button variant="contained" size="medium" color="inherit" sx={{ ml:3 ,mr :1 }} style={{color : props.mode ==="white" ?"black":"black" , fontFamily : 'Comfortaa'}}>Import</Button>
               
-              <LeftDrawer addData={addData} handleInput={handleInput} contact={contact} setcontact={setcontact}  mode={props.mode}/>
+              <LeftDrawer addData={addData} handleInput={handleInput} contact={contact} setcontact={setcontact}  mode={props.mode} theme={props.theme}/>
           </div>
         </Box>
 
@@ -116,7 +123,7 @@ function Contact(props) {
           //Tabs Section
         }
 
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' , fontFamily : 'Comfortaa' }}>
           <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
             <Tab label="ALL Contacts" {...a11yProps(0)} style={{color : props.mode ==="white" ?"black":"white"}}  />
             <Tab label="My Contacts" {...a11yProps(1)} style={{color : props.mode ==="white" ?"black":"white"}}/>
