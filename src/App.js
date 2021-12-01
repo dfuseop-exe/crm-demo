@@ -9,7 +9,7 @@ import Contact from "./Components/Pages/Contact";
 function App() {
 
   const [mode, setmode] = useState("white");
-  const [theme, settheme] = useState('orange')
+  const [theme, settheme] = useState('#fb8c00')
 
   const togglemode = () => {
     

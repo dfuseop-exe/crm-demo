@@ -43,13 +43,13 @@ export default function Navbar(props) {
         <FormControl variant="standard"> 
 
             
-         <Select variant="standard" style={{width : "80px" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} onChange={props.HandleSelect}>
+         <Select variant="standard" style={{width : "100px" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} onChange={props.HandleSelect}>
 
               <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#fb8c00'>Orange</MenuItem>
-              <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#e53935'>Red</MenuItem>
-              <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#ab47bc'>Purple</MenuItem>
-              <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#5c6bc0'>Indigo</MenuItem>
-              <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#20B2AA'>LightSeaGreen</MenuItem>
+              <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#EF2E45'>Red</MenuItem>
+              <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#a965e2'>Purple</MenuItem>
+              <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#50C878'>Green</MenuItem>
+              <MenuItem style={{backgroundColor : props.mode ==="white" ?"white":"#14130c" , color : props.mode ==="white" ?"black":"white" , fontFamily : 'Comfortaa'}} value='#55b4dd'>Sky Blue</MenuItem>
             </Select>
         </FormControl>
       </Toolbar>

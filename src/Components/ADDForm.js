@@ -7,6 +7,8 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import Box from '@mui/material/Box';
+
 
 
 export default function ADDForm(props) {
@@ -25,9 +27,10 @@ export default function ADDForm(props) {
         }}
       >
         <Toolbar>
-          <Typography variant="h5" textAlign="center" mt={2} mb={2} style={{fontFamily : 'Comfortaa' , color : props.mode ==="white" ?"black":"white"}}>
+          <Typography variant="h5" textAlign="center" mt={2} mb={2} style={{fontFamily : 'Comfortaa' , color : props.mode ==="white" ?"black":"white" , flexGrow: 1}}>
             Create New Contact
           </Typography>
+         
         </Toolbar>
       </AppBar>
 
@@ -78,9 +81,27 @@ export default function ADDForm(props) {
           
         />
 
-        <Button  variant="contained" size="medium" color="inherit" style={{color : props.mode ==="white" ?"black":"black" ,  fontFamily : 'Comfortaa'}} onClick={props.addData}>
+<Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          p: 1,
+          m: 1,
+        }}
+      >
+         <Button  variant="contained" size="medium" color="inherit" style={{color : props.mode ==="white" ?"black":"black" ,  fontFamily : 'Comfortaa'}} onClick={props.addData}>
           Create Contact
         </Button>
+
+
+        <Button  variant="contained" size="medium" color="inherit" style={{color : props.mode ==="white" ?"black":"black" ,  fontFamily : 'Comfortaa' }}>
+          Cancle
+        </Button>
+       
+      </Box>
+
+       
+
       </div>
     </div>
   );
